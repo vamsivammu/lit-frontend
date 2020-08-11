@@ -1,0 +1,78 @@
+<div *ngIf="started && !game_over" class="game-container">
+    <div *ngIf="started && teams[other_team]" class="other-team">
+        <div (click)="open_cards(member)" *ngFor="let member of object_keys(teams[other_team])" class="each-user">
+            <app-user [mine]="id" [name]="members[member].name" [num]="card_nums[member]" [status]="members[member].status" [id]="member" [current]="current"></app-user>
+        </div>
+    </div>
+    <div  *ngIf="started && teams[my_team]" class="my-team">
+        <div (click)="open_cards(member)" *ngFor="let member of object_keys(teams[my_team])" class="each-user">
+            <app-user [mine]="id" [name]="members[member].name" [num]="card_nums[member]" [status]="members[member].status" [id]="member" [current]="current"></app-user>
+        </div>
+    </div>
+
+    <div *ngIf="started" class="deck-card">
+        <div class="sequence" (click)="form_seq()">
+          Form Sequence
+        </div>
+        <div (click)="toggle_my_card(cards[card].suit,cards[card].value,cards[card].weight)" class="play-card" *ngFor="let card of card_ids">
+            <app-card  [suit]="cards[card].suit" [value]="cards[card].value"></app-card>
+        </div>
+
+        <!-- <div  id="playcard" class="play-card" >
+            <app-card  suit="spade" value="7"></app-card>
+        </div> -->
+
+    </div>
+
+
+</div>
+<div *ngIf="joining" class="loading-container">
+  <h4>ROOM ID:{{room_id}}</h4>
+  <div class="joining-users">
+
+      <div class="each-user" *ngFor="let member of keys">
+          <app-user [mine]="id" [name]="members[member].name" [num]="0" [status]="members[member].status" [current]="current" [id]="member"></app-user>
+      </div>
+  </div>
+
+  </div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="ask_cards">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select a card to ask</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+          <div class="deck-container">
+            <div class="valid-deck" *ngFor="let deck of valid_decks">
+                <div class="play-card"  *ngFor="let card of symbol_space[deck]">
+                    <app-card (click)="toggle_card(card.suit,card.value)" *ngIf="!cards[card.card_id]" [suit]="card.suit" [value]="card.value"></app-card>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button (click)="askcard()" type="button" class="btn btn-primary">Ask</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="gameover" *ngIf="game_over">
+    <div class="score-card">
+      <div class="team">
+        <h3>Team A</h3>
+        <h6>{{scores['a']}}</h6>
+      </div>
+      <div class="team">
+        <h3>Team B</h3>
+        <h6>{{scores['b']}}</h6>
+      </div>
+    </div>
+</div>

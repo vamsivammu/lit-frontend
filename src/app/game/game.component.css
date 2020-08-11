@@ -1,0 +1,106 @@
+.game-container{
+    height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+.loading-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.joining-users{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.other-team, .my-team{
+    height:25vh;
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deck-card{
+    height: 25vh;
+    /* width:80%; */
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center; 
+    background-color:pink;
+}
+.play-card{
+    /* position: absolute; */
+    height:98%;
+    width: 30px;
+    max-height: 100%;    
+}
+
+.joining{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.each-user{
+    margin-left:1px;
+    margin-right: 1px;
+}
+
+.deck-container{
+    display: flex;
+    flex-direction: column;
+}
+.valid-deck{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.sequence{
+    position: absolute;
+    border-radius: 6px;
+    right: 0;
+    margin-top: -50px;
+    align-self: flex-start;
+    /* margin-right: 0px; */
+    cursor: pointer;
+    background-color: coral;
+    padding:6px
+}
+
+.gameover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.score-card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 15px;
+    background-color: white;
+}
+.team{
+    display: flex;
+    flex-direction: column;
+}

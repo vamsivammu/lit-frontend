@@ -1,0 +1,9 @@
+<div class="playing-card" [id]="suit+'_'+value">
+    <div [ngClass]="'top '+suit">
+        <span>{{value}}</span><span [innerHTML]="getsuit()"></span>
+    </div>
+    <h1 [ngClass]="suit" [innerHTML]="getsuit()"></h1>
+    <div [ngClass]="'bottom '+suit">
+        <span>{{value}}</span><span [innerHTML]="getsuit()"></span>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.user{
+    display: inline-flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    padding: 3px;
+
+}
+
+.current{
+    border: 4px slateblue solid;
+    border-radius: 50%;
+    font-weight: bolder;
+    transition: all 2s;
+    animation: change 1s linear infinite both;
+}
+@keyframes change{
+    0%{
+        border-color: slateblue;
+    }
+    50%{
+        border-color: red;
+    }
+    100%{
+        border-color: slateblue;
+    }
+}
+.img{
+    width: 70%;
+}
+.pic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.name{
+    text-align: center;
+    font-size: 10pt;
+}
+.zero{
+    color:red;
+}
+.offline{
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: gray;
+}
+.online{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: lawngreen;
+}
+
